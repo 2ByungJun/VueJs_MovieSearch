@@ -19,23 +19,33 @@
 </template>
 
 <script>
-import axios from 'axios'
+import {mapActions} from 'vuex'
 
 export default {
-    data(){
-        return {
-            title: '',
-            loading: false
+    computed: {
+        // title은 v-model로 선언되어 양방향 전송이 되어진다.
+        // 그래서 set을 할 때는 store mutations의 도움을 받아야하고,
+        // 출력할 때는 state의 데이터를 리턴받는 구조로 만들어야 한다. 
+        title: {
+            // Getter
+            get () {
+                return this.$store.state.movie.title
+            },
+            // Setter
+            set (title) {
+                this.$store.commit('movie/updateState', {
+                    title // title: title
+                })
+            }
+        },
+        loading(){
+            return this.$store.state.movie.loading
         }
     },
     methods: {
-        searchMovies() {
-            console.log("searchMovies")
-            axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=e77f1431&s=${this.title}`)
-                .then(res => {
-                    console.log(res)
-                })
-        }
+        ...mapActions('movie', [ // 전개 연산자를 사용해야함
+            'searchMovies'
+        ])
     }
 }
 </script>
