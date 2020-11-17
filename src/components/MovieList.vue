@@ -21,11 +21,12 @@
             >
               <v-img
                 class="white--text align-end"
-                height="200px"
-                :src="movie.Poster"
-                :alt="movie.Title"
-              >
-                <v-card-title></v-card-title>
+                :height="posterHeight(movie.Poster)"
+                :src="posterSrc(movie.Poster)"
+                :alt="movie.Title">
+                <template v-slot:placeholder>
+                  <div style="background:lightgray; height:100%;"></div>
+                </template>
               </v-img>
 
               <v-card-subtitle class="pb-0">
@@ -34,25 +35,7 @@
 
               <v-card-text class="text--primary">
                 <div>{{movie.Title}}</div>
-
-                <div>movie contents</div>
               </v-card-text>
-
-              <v-card-actions>
-                <v-btn
-                  color="orange"
-                  text
-                >
-                  Share
-                </v-btn>
-
-                <v-btn
-                  color="orange"
-                  text
-                >
-                  Explore
-                </v-btn>
-              </v-card-actions>
             </v-card>
           </template>
       </v-col>
@@ -64,6 +47,14 @@ export default {
   computed: {
     movies(){
       return this.$store.state.movie.movies
+    }
+  },
+  methods: {
+    posterSrc (poster){
+      return poster === 'N/A' ? '' : poster 
+    },
+    posterHeight (poster){
+      return poster === 'N/A' ? 100 : 300
     }
   }
 }
