@@ -11,6 +11,7 @@
 
 <script>
 // @ : 절대경로(Vue CLI)
+// aaa
 import SearchBar from '@/components/SearchBar'; 
 import MovieList from '@/components/MovieList'; 
 
