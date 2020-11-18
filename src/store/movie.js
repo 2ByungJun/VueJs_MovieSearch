@@ -5,7 +5,7 @@ export default{
     state: () => ({
         title: '',
         loading: false,
-        movies: []
+        movies: [],
     }),
     mutations: {
         updateState(state, payload){
@@ -23,7 +23,7 @@ export default{
             commit('updateState', {
                 loading: true,
             })
-            const res = await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=e77f1431&s=${state.title}&page=1`)
+            const res = await axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=e77f1431&s=${state.title}&page=1`)
             const pageLength = Math.ceil(res.data.totalResults / 10) // 올림처리
 
             commit('updateState', {
@@ -33,7 +33,7 @@ export default{
             if(pageLength > 1){
                 for( let i = 2; i <= pageLength; i += 1){
                     if( i > 4 ) break 
-                    const resMore = await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=e77f1431&s=${state.title}&page=${i}`)
+                    const resMore = await axios.get(`https://www.omdbapi.com/?i=tt3896198&apikey=e77f1431&s=${state.title}&page=${i}`)
                     commit('pushIntoMovies', resMore.data.Search)
                 }
             }
