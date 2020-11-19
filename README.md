@@ -1,6 +1,6 @@
 # Movie-search
 
-![](https://images.velog.io/images/ieed0205/post/b125f457-049b-4b1b-bcd7-81675b884147/Movie.gif)
+![](https://images.velog.io/images/ieed0205/post/cc1489bb-9700-4a70-8214-e124002cbde4/movieSearch.gif)
 
 ---
 
