@@ -1,24 +1,15 @@
-# movie_search
+# Movie-search
 
-## Project setup
-```
-npm install
-```
+![](https://images.velog.io/images/ieed0205/post/9b62fb55-e634-4aee-a484-ceb9af8acc4d/Movie.gif)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+---
 
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Check List
+- [x] Vuetify
+- [x] Vuex
+- [x] SearchBar
+- [x] MovieList
+- [x] OmdbAPI
+- [x] Refectoring
+- [x] firbase hosting
+...
