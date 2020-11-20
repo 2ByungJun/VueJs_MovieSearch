@@ -10,6 +10,8 @@
   "dependencies": {
     "axios": "^0.21.0",
     "core-js": "^3.6.5",
+    "path": "^0.12.7",
+    "request": "^2.88.2",
     "vue": "^2.6.11",
     "vue-masonry": "^0.11.8",
     "vuetify": "^2.2.11",

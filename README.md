@@ -12,4 +12,5 @@
 - [x] OmdbAPI
 - [x] Refectoring
 - [x] firbase hosting
+- [x] Java server x Vue server Request data 
 ...
